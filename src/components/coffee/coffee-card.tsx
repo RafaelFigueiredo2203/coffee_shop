@@ -4,8 +4,9 @@ import { Button } from '../ui/button'
 
 export function CoffeeCard(){
   return(
-    <div className="flex flex-col items-center justify-center w-64 mx-8 mt-12">
-      <img src={Coffeimg} alt="coffee tradicional" />
+    <div className="flex flex-col items-center justify-center w-64 mx-8 mt-12 bg-[#F3F2F2]  rounded-tr-3xl rounded-bl-3xl px-1 rounded-br-md rounded-tl-md
+    ">
+      <img src={Coffeimg} alt="coffee tradicional" className='mt-[-20px]'/>
 
       <div className='flex flex-row '>
       <span className="font-roboto text-[10px] font-bold text-yellow-600 bg-yellow-200 rounded-xl mt-3 px-2 mr-1">
@@ -27,7 +28,7 @@ export function CoffeeCard(){
       O tradicional café feito com água quente e grãos moídos
       </p>
 
-      <div className='flex flex-row items-center justify-left w-52 h-[38px] mt-8'>
+      <div className='flex flex-row items-center justify-left w-52 h-[38px] mt-8 mb-6'>
         R$ <span className='font-dongle text-gray-800 font-bold text-3xl ml-1'>
           9,90</span>
 
