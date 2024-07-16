@@ -17,9 +17,13 @@ export function CoffeeCard({title,description,image,price,tags}:CoffeeCardProps)
       <img src={image} alt="coffee tradicional" className='mt-[-20px]'/>
 
       <div className='flex flex-row '>
-      <span className="font-roboto text-[10px] font-bold text-yellow-600 bg-yellow-200 rounded-xl mt-3 px-2 mr-1">
-      {tags}
-      </span>
+      
+      {tags.map((tag) => (
+        <span key={tag} className="font-roboto text-[10px] font-bold text-yellow-600 bg-yellow-200 rounded-xl mt-3 px-2 mr-1">
+        {tag}  
+        </span>
+      ))}
+      
       
       </div>
 

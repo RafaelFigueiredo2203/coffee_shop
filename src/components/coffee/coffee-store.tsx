@@ -34,7 +34,7 @@ export function CoffeeStore(){
         description={coffee.description}
         image='https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/800px-A_small_cup_of_coffee.JPG'
         price={coffee.price}
-        tags={['Tradicional, expresso']}
+        tags={coffee.tags}
         />
       ))}
         
