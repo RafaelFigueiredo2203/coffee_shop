@@ -5,7 +5,7 @@
     "description": "O tradicional café feito com água quente e grãos moídos",
     "tags": ["tradicional"],
     "price": 9.90,
-    "image": "/images/coffees/expresso.png"
+    "image": "https://github.com/RafaelFigueiredo2203/coffee_shop/blob/main/src/assets/Image-1.png?raw=true"
   },
   {
     "id": "1",
@@ -13,7 +13,7 @@
     "description": "Expresso diluído, menos intenso que o tradicional",
     "tags": ["tradicional"],
     "price": 9.90,
-    "image": "/images/coffees/americano.png"
+    "image": "https://github.com/RafaelFigueiredo2203/coffee_shop/blob/main/src/assets/Image-2.png?raw=true"
   },
   {
     "id": "2",
@@ -21,7 +21,7 @@
     "description": "Café expresso tradicional com espuma cremosa",
     "tags": ["tradicional"],
     "price": 9.90,
-    "image": "/images/coffees/expresso-cremoso.png"
+    "image": "https://github.com/RafaelFigueiredo2203/coffee_shop/blob/main/src/assets/Image-3.png?raw=true"
   },
   {
     "id": "3",
@@ -29,7 +29,7 @@
     "description": "Bebida preparada com café expresso e cubos de gelo",
     "tags": ["tradicional", "gelado"],
     "price": 9.90,
-    "image": "/images/coffees/cafe-gelado.png"
+    "image": "https://github.com/RafaelFigueiredo2203/coffee_shop/blob/main/src/assets/Image-4.png?raw=true"
   },
   {
     "id": "4",
@@ -37,7 +37,7 @@
     "description": "Meio a meio de expresso tradicional com leite vaporizado",
     "tags": ["tradicional", "com leite"],
     "price": 9.90,
-    "image": "/images/coffees/cafe-com-leite.png"
+    "image": "https://github.com/RafaelFigueiredo2203/coffee_shop/blob/main/src/assets/Image-5.png?raw=true"
   },
   {
     "id": "5",
@@ -45,7 +45,7 @@
     "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
     "tags": ["tradicional", "com leite"],
     "price": 9.90,
-    "image": "/images/coffees/latte.png"
+    "image": "https://github.com/RafaelFigueiredo2203/coffee_shop/blob/main/src/assets/Image-6.png?raw=true"
   },
   {
     "id": "6",
@@ -53,7 +53,7 @@
     "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
     "tags": ["tradicional", "com leite"],
     "price": 9.90,
-    "image": "/images/coffees/capuccino.png"
+    "image": "https://github.com/RafaelFigueiredo2203/coffee_shop/blob/main/src/assets/Image-7.png?raw=true"
   },
   {
     "id": "7",
@@ -61,7 +61,7 @@
     "description": "Café expresso misturado com um pouco de leite quente e espuma",
     "tags": ["tradicional", "com leite"],
     "price": 9.90,
-    "image": "/images/coffees/macchiato.png"
+    "image": "https://github.com/RafaelFigueiredo2203/coffee_shop/blob/main/src/assets/Image-8.png?raw=true"
   },
   {
     "id": "8",
@@ -69,7 +69,7 @@
     "description": "Café expresso misturado com um pouco de leite quente e espuma",
     "tags": ["tradicional", "com leite"],
     "price": 9.90,
-    "image": "/images/coffees/mocaccino.png"
+    "image": "https://github.com/RafaelFigueiredo2203/coffee_shop/blob/main/src/assets/Image-9.png?raw=true"
   },
   {
     "id": "9",
@@ -77,7 +77,7 @@
     "description": "Bebida feita com chocolate dissolvido no leite quente e café",
     "tags": ["especial", "com leite"],
     "price": 9.90,
-    "image": "/images/coffees/chocolate-quente.png"
+    "image": "https://github.com/RafaelFigueiredo2203/coffee_shop/blob/main/src/assets/Image-10.png?raw=true"
   },
   {
     "id": "10",
@@ -85,7 +85,7 @@
     "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
     "tags": ["especial", "alcoólico", "gelado"],
     "price": 9.90,
-    "image": "/images/coffees/cubano.png"
+    "image": "https://github.com/RafaelFigueiredo2203/coffee_shop/blob/main/src/assets/Image-11.png?raw=true"
   },
   {
     "id": "11",
@@ -93,7 +93,7 @@
     "description": "Bebida adocicada preparada com café e leite de coco",
     "tags": ["especial"],
     "price": 9.90,
-    "image": "/images/coffees/havaiano.png"
+    "image": "https://github.com/RafaelFigueiredo2203/coffee_shop/blob/main/src/assets/Image-12.png?raw=true"
   },
   {
     "id": "12",
@@ -101,7 +101,7 @@
     "description": "Bebida preparada com grãos de café árabe e especiarias",
     "tags": ["especial"],
     "price": 9.90,
-    "image": "/images/coffees/arabe.png"
+    "image": "https://github.com/RafaelFigueiredo2203/coffee_shop/blob/main/src/assets/Image-13.png?raw=true"
   },
   {
     "id": "13",
@@ -109,6 +109,6 @@
     "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
     "tags": ["especial", "alcoólico"],
     "price": 9.90,
-    "image": "/images/coffees/irlandes.png"
+    "image": "https://github.com/RafaelFigueiredo2203/coffee_shop/blob/main/src/assets/Image.png?raw=true"
   }
 ]
