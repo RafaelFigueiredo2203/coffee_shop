@@ -1,36 +1,39 @@
-import Coffeimg from '@/assets/Coffee-example.png'
-import { Minus, Plus, ShoppingCart } from 'lucide-react'
-import { Button } from '../ui/button'
+import { Minus, Plus, ShoppingCart } from 'lucide-react';
+import { Button } from '../ui/button';
 
-export function CoffeeCard(){
+export interface CoffeeCardProps {
+  id?:string
+  title: string;
+  description: string;
+  tags: string[];
+  price: number;
+  image: string;
+}
+
+export function CoffeeCard({title,description,image,price,tags}:CoffeeCardProps){
   return(
     <div className="flex flex-col items-center justify-center w-64 mx-8 mt-12 bg-[#F3F2F2]  rounded-tr-3xl rounded-bl-3xl px-1 rounded-br-md rounded-tl-md
     ">
-      <img src={Coffeimg} alt="coffee tradicional" className='mt-[-20px]'/>
+      <img src={image} alt="coffee tradicional" className='mt-[-20px]'/>
 
       <div className='flex flex-row '>
       <span className="font-roboto text-[10px] font-bold text-yellow-600 bg-yellow-200 rounded-xl mt-3 px-2 mr-1">
-      Tradicional
+      {tags}
       </span>
-      <span className="font-roboto text-[10px] font-bold text-yellow-600 bg-yellow-200 rounded-xl mt-3 px-2 mr-1">
-      Tradicional
-      </span>
-      <span className="font-roboto text-[10px] font-bold text-yellow-600 bg-yellow-200 rounded-xl mt-3 px-2 mr-1">
-      Tradicional
-      </span>
+      
       </div>
 
       <h3 className='font-dongle text-gray-900 font-bold text-3xl mt-4'>
-      Expresso Tradicional
+      {title}
       </h3>
 
       <p className='font-robot text-gray-600 font-normal text-center text-sm mt-2'>
-      O tradicional café feito com água quente e grãos moídos
+      {description}
       </p>
 
       <div className='flex flex-row items-center justify-left w-52 h-[38px] mt-8 mb-6'>
         R$ <span className='font-dongle text-gray-800 font-bold text-3xl ml-1'>
-          9,90</span>
+          {price}</span>
 
       <div className='flex flex-row ml-4 bg-gray-300 rounded-sm'>
       <Button className='flex items-center justify-center px-1 bg-transparent'>
