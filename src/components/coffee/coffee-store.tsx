@@ -1,6 +1,8 @@
+import { FormatCurrency } from '@/lib/functions/format-curreny';
 import axios from 'axios';
+import { Key } from 'react';
 import { useQuery } from 'react-query';
-import { CoffeeCard, CoffeeCardProps } from "./coffee-card";
+import { CoffeeCard } from "./coffee-card";
 
 export function CoffeeStore(){
 
@@ -9,16 +11,11 @@ export function CoffeeStore(){
     console.log(res.data)
     return res.data;
   }
-
-
   const { data ,isLoading} = useQuery('data', fetchData);
 
   if(isLoading){
     return
   }
-
-  console.log(data)
-
 
   return(
     <div className="w-full mt-8 flex flex-col items-start justify-start ">
@@ -27,13 +24,13 @@ export function CoffeeStore(){
       </h2>
 
       <div className="w-full grid grid-cols-4 mt-12 mb-16 px-8">
-      {data.map((coffee: CoffeeCardProps) => (
+      {data.map((coffee: { id: Key | null | undefined; title: string; description: string; image: string; price: number; tags: string[]; }) => (
         <CoffeeCard
         key={coffee.id}
         title={coffee.title}
         description={coffee.description}
-        image='https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/800px-A_small_cup_of_coffee.JPG'
-        price={coffee.price}
+        image={coffee.image}
+        price={FormatCurrency(coffee.price)}
         tags={coffee.tags}
         />
       ))}

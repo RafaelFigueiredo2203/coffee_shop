@@ -6,20 +6,20 @@ export interface CoffeeCardProps {
   title: string;
   description: string;
   tags: string[];
-  price: number;
+  price: string | number;
   image: string;
 }
 
 export function CoffeeCard({title,description,image,price,tags}:CoffeeCardProps){
   return(
-    <div className="flex flex-col items-center justify-center w-64 mx-8 mt-12 bg-[#F3F2F2]  rounded-tr-3xl rounded-bl-3xl px-1 rounded-br-md rounded-tl-md
+    <div className="flex flex-col items-center justify-center w-64 mx-8 mt-12 bg-[#ebeaea]  rounded-tr-3xl rounded-bl-3xl px-1 rounded-br-md rounded-tl-md
     ">
       <img src={image} alt="coffee tradicional" className='mt-[-20px]'/>
 
       <div className='flex flex-row '>
       
       {tags.map((tag) => (
-        <span key={tag} className="font-roboto text-[10px] font-bold text-yellow-600 bg-yellow-200 rounded-xl mt-3 px-2 mr-1">
+        <span key={tag} className="font-roboto capitalize text-[10px] font-bold text-yellow-600 bg-yellow-200 rounded-xl mt-3 px-2 mr-1">
         {tag}  
         </span>
       ))}
@@ -36,7 +36,7 @@ export function CoffeeCard({title,description,image,price,tags}:CoffeeCardProps)
       </p>
 
       <div className='flex flex-row items-center justify-left w-52 h-[38px] mt-8 mb-6'>
-        R$ <span className='font-dongle text-gray-800 font-bold text-3xl ml-1'>
+        <span className='font-dongle text-gray-800 font-bold text-3xl ml-1'>
           {price}</span>
 
       <div className='flex flex-row ml-4 bg-gray-300 rounded-sm'>
