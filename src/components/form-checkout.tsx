@@ -1,14 +1,14 @@
-import { CircleDollarSign, MapPin } from 'lucide-react'
+import { CircleDollarSign, CreditCardIcon, MapPin } from 'lucide-react'
 
 export function FormCheckout() {
   return (
-    <div className="mx-14 mb-8 mt-10 flex w-[640px] flex-col">
+    <div className="mx-14 mb-8 mt-10 flex w-[640px] flex-col   ">
       <h3 className="mb-6 font-dongle text-3xl font-bold text-zinc-800">
         Complete seu pedido
       </h3>
 
       <div>
-        <div className="rounded-sm border bg-[#F3F2F2]">
+        <div className="rounded-sm  bg-zinc-50">
           <div className="flex flex-col items-center rounded-sm  text-center">
             <MapPin className="mt-5 h-5 w-5 text-yellow-600" />
             <span className="flex flex-row items-center text-center font-roboto text-lg text-gray-900">
@@ -70,7 +70,7 @@ export function FormCheckout() {
           </form>
         </div>
 
-        <div className="mt-6 flex flex-col items-center rounded-sm border bg-[#F3F2F2]">
+        <div className="mt-6 flex flex-col items-center rounded-sm  bg-zinc-50">
           <div className="flex flex-col items-center rounded-sm  text-center">
             <CircleDollarSign className="mt-5 h-5 w-5 text-purple-600" />
             <span className="flex flex-row items-center text-center font-roboto text-lg text-gray-900">
@@ -84,8 +84,9 @@ export function FormCheckout() {
           <div className="mb-8 mt-8 w-[560px]">
             <button
               type="button"
-              className="mr-2 h-12 w-44 rounded-md bg-zinc-200 text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
+              className="mr-2 flex h-12  w-44 flex-row items-center justify-center rounded-md bg-zinc-200 text-center text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
             >
+              <CreditCardIcon className="mt-5 h-5 w-5 text-purple-600" />
               Cartão de crédito
             </button>
 
@@ -93,6 +94,7 @@ export function FormCheckout() {
               type="button"
               className="mr-2 h-12 w-44 rounded-md bg-zinc-200 text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
             >
+              <CreditCardIcon className="mt-5 h-5 w-5 text-purple-600" />
               Cartão de débito
             </button>
 
@@ -100,6 +102,7 @@ export function FormCheckout() {
               type="button"
               className="mr-2 h-12 w-44 rounded-md bg-zinc-200 text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
             >
+              <CircleDollarSign className="mt-5 h-5 w-5 text-purple-600" />
               Dinheiro
             </button>
           </div>
