@@ -81,28 +81,28 @@ export function FormCheckout() {
             </p>
           </div>
 
-          <div className="mb-8 mt-8 w-[560px]">
+          <div className="mb-8 mt-8 flex w-full flex-row items-center justify-center">
             <button
               type="button"
-              className="mr-2 flex h-12  w-44 flex-row items-center justify-center rounded-md bg-zinc-200 text-center text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
+              className="mr-2 flex h-12  w-44 flex-row items-center justify-center rounded-md bg-zinc-200  text-center text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
             >
-              <CreditCardIcon className="mt-5 h-5 w-5 text-purple-600" />
+              <CreditCardIcon className="mr-1 flex h-5 w-5 text-purple-600" />
               Cartão de crédito
             </button>
 
             <button
               type="button"
-              className="mr-2 h-12 w-44 rounded-md bg-zinc-200 text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
+              className="mr-2 flex h-12  w-44 flex-row items-center justify-center rounded-md bg-zinc-200  text-center text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
             >
-              <CreditCardIcon className="mt-5 h-5 w-5 text-purple-600" />
+              <CreditCardIcon className="mr-1 h-5 w-5 text-purple-600" />
               Cartão de débito
             </button>
 
             <button
               type="button"
-              className="mr-2 h-12 w-44 rounded-md bg-zinc-200 text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
+              className="mr-2 flex h-12  w-44 flex-row items-center justify-center rounded-md bg-zinc-200  text-center text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
             >
-              <CircleDollarSign className="mt-5 h-5 w-5 text-purple-600" />
+              <CircleDollarSign className="mr-1 h-5 w-5 text-purple-600" />
               Dinheiro
             </button>
           </div>
