@@ -1,7 +1,7 @@
 import { QueryClientProvider } from 'react-query'
-import { Header } from './components/header'
+import { RouterProvider } from 'react-router-dom'
 import { queryClient } from './lib/utils/queryClient'
-import { Dashboard } from './pages/Dashboard'
+import { Routes } from './routes'
 import { CartProvider } from './utils/context/context'
 
 export function App() {
@@ -9,8 +9,7 @@ export function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <CartProvider>
-          <Header />
-          <Dashboard />
+          <RouterProvider router={Routes} />
         </CartProvider>
       </QueryClientProvider>
     </>

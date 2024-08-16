@@ -2,12 +2,16 @@ import { Minus, Plus, ShoppingCart } from 'lucide-react'
 import { Button } from '../ui/button'
 
 export interface CoffeeCardProps {
-  id?: string
+  id?: string | number
   title: string
   description: string
   tags: string[]
   price: string | number
   image: string
+  onIncreaseQuantity: () => void
+  onDecreaseQuantity: () => void
+  onBuyProduct: () => void
+  productQuantity: number
 }
 
 export function CoffeeCard({
@@ -16,6 +20,10 @@ export function CoffeeCard({
   image,
   price,
   tags,
+  onIncreaseQuantity,
+  onDecreaseQuantity,
+  productQuantity,
+  onBuyProduct,
 }: CoffeeCardProps) {
   return (
     <div
@@ -49,16 +57,27 @@ export function CoffeeCard({
         </span>
 
         <div className="ml-4 flex flex-row rounded-sm bg-gray-300">
-          <Button className="flex items-center justify-center bg-transparent px-1">
+          <Button
+            onClick={onDecreaseQuantity}
+            className="flex items-center justify-center bg-transparent px-1"
+          >
             <Minus size={15} color="#8047F8" />{' '}
           </Button>
-          <span className="flex items-center justify-center p-1">1</span>
-          <Button className="flex items-center justify-center bg-transparent px-1">
+          <span className="flex items-center justify-center p-1">
+            {productQuantity}
+          </span>
+          <Button
+            onClick={onIncreaseQuantity}
+            className="flex items-center justify-center bg-transparent px-1"
+          >
             <Plus size={15} color="#8047F8" />{' '}
           </Button>
         </div>
 
-        <Button className="ml-2 flex h-[38px] w-[38px] items-center justify-center rounded-sm bg-purple-800 p-1 hover:bg-purple-600">
+        <Button
+          onClick={onBuyProduct}
+          className="ml-2 flex h-[38px] w-[38px] items-center justify-center rounded-sm bg-purple-800 p-1 hover:bg-purple-600"
+        >
           <ShoppingCart fill="white" size={20} color="white" />
         </Button>
       </div>

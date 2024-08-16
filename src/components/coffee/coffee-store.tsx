@@ -1,10 +1,22 @@
 import { FormatCurrency } from '@/lib/functions/format-curreny'
+import { useMyContext } from '@/utils/context/useContext'
 import axios from 'axios'
-import { Key } from 'react'
+import { useEffect, useState } from 'react'
 import { useQuery } from 'react-query'
 import { CoffeeCard } from './coffee-card'
 
 export function CoffeeStore() {
+  const { productsBuy, setProductsBuy } = useMyContext()
+
+  const [numberOfProduct, setNumberOfProduct] = useState<{
+    [key: number]: number
+  }>({})
+
+  useEffect(() => {
+    localStorage.setItem('productsInCart', JSON.stringify(productsBuy))
+    console.log(numberOfProduct)
+  }, [productsBuy])
+
   async function fetchData() {
     const res = await axios.get(
       'https://raw.githubusercontent.com/RafaelFigueiredo2203/coffee_shop/main/data.json',
@@ -13,6 +25,59 @@ export function CoffeeStore() {
     return res.data
   }
   const { data, isLoading } = useQuery('data', fetchData)
+
+  function handleIncreaseProduct(id: number) {
+    setNumberOfProduct((prev) => ({
+      ...prev,
+      [id]: (prev[id] || 0) + 1,
+    }))
+  }
+
+  function handleDecreaseProduct(id: number) {
+    setNumberOfProduct((prev) => ({
+      ...prev,
+      [id]: prev[id] > 1 ? prev[id] - 1 : 0,
+    }))
+  }
+
+  function buyProduct(id: number) {
+    if (numberOfProduct[id] <= 0) {
+      return
+    }
+    console.log(data)
+    // Encontrar o produto no conjunto de dados
+    const newProductBuy = data.find((x: { id: number }) => x.id === id)
+
+    if (newProductBuy) {
+      // Obter a quantidade atual do produto
+      const quantity = numberOfProduct[id] || 1 // Assumindo que quantities é o estado que mantém a quantidade de cada produto
+
+      // Verificar se o produto já está no carrinho
+      const existingProductIndex = productsBuy.findIndex(
+        (product) => Number(product.id) === id,
+      )
+
+      if (existingProductIndex !== -1) {
+        // Se o produto já estiver no carrinho, atualizar a quantidade
+        const updatedProducts = [...productsBuy]
+        updatedProducts[existingProductIndex].amount += quantity // Incrementar a quantidade com base na seleção atual
+        updatedProducts[existingProductIndex].newPrice =
+          updatedProducts[existingProductIndex].price *
+          updatedProducts[existingProductIndex].amount // Atualizar o preço total
+        setProductsBuy(updatedProducts)
+      } else {
+        // Se o produto não estiver no carrinho, adicionar ao carrinho
+        newProductBuy.amount = quantity
+        newProductBuy.price = parseInt(newProductBuy.price) // Converter o preço para número, se necessário
+        newProductBuy.newPrice = newProductBuy.price * newProductBuy.amount // Calcular o preço total
+
+        setProductsBuy((prevState) => [...prevState, newProductBuy])
+      }
+
+      // Atualizar o local storage com o novo estado do carrinho
+      localStorage.setItem('productsInCart', JSON.stringify(productsBuy))
+    }
+  }
 
   if (isLoading) {
     return
@@ -27,7 +92,7 @@ export function CoffeeStore() {
       <div className="mb-16 mt-12 grid w-full grid-cols-4 px-8">
         {data.map(
           (coffee: {
-            id: Key | null | undefined
+            id: string | number
             title: string
             description: string
             image: string
@@ -41,6 +106,14 @@ export function CoffeeStore() {
               image={coffee.image}
               price={FormatCurrency(coffee.price)}
               tags={coffee.tags}
+              onDecreaseQuantity={() =>
+                handleDecreaseProduct(Number(coffee.id))
+              }
+              onIncreaseQuantity={() =>
+                handleIncreaseProduct(Number(coffee.id))
+              }
+              onBuyProduct={() => buyProduct(Number(coffee.id))}
+              productQuantity={numberOfProduct[Number(coffee.id)] || 0}
             />
           ),
         )}

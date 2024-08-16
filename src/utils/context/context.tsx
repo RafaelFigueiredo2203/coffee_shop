@@ -14,15 +14,16 @@ export interface Product {
   cover: string
   thumbnail: string
   ingredients: string[]
+  amount: number
+  newPrice: number
 }
 
 interface CartContextType {
   productsBuy: Product[]
   setProductsBuy: Dispatch<SetStateAction<Product[]>>
   setProducts: Dispatch<SetStateAction<Product[]>>
-  setNumberOfProduct: Dispatch<SetStateAction<number>>
+
   products: Product[]
-  numberOfProduct: number
 }
 
 export const CartContext = createContext<CartContextType | undefined>(undefined)
@@ -32,15 +33,12 @@ interface CartProviderProps {
 }
 
 export function CartProvider({ children }: CartProviderProps) {
-  const [numberOfProduct, setNumberOfProduct] = useState(0)
   const [productsBuy, setProductsBuy] = useState<Product[]>([])
   const [products, setProducts] = useState<Product[]>([])
 
   return (
     <CartContext.Provider
       value={{
-        numberOfProduct,
-        setNumberOfProduct,
         productsBuy,
         setProductsBuy,
         products,
