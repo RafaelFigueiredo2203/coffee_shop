@@ -18,14 +18,16 @@ export function Header() {
           Ourinhos, SP
         </span>
 
-        <Link to="/product">
-          <div className="flex h-7 w-7 items-center justify-center rounded-sm bg-yellow-100 px-1 font-normal hover:bg-yellow-300">
-            <img src={cartLogo} className="h-5 w-5 text-yellow-700 " />
-            <span className="absolute mb-6 ml-8 flex h-4 w-4 items-center justify-center rounded-full bg-yellow-700 text-sm text-white">
-              {productsBuy.length}
-            </span>
-          </div>
-        </Link>
+        {productsBuy.length > 0 && (
+          <Link to="/product">
+            <div className="flex h-7 w-7 items-center justify-center rounded-sm bg-yellow-100 px-1 font-normal hover:bg-yellow-300">
+              <img src={cartLogo} className="h-5 w-5 text-yellow-700 " />
+              <span className="absolute mb-6 ml-8 flex h-4 w-4 items-center justify-center rounded-full bg-yellow-700 text-sm text-white">
+                {productsBuy.length}
+              </span>
+            </div>
+          </Link>
+        )}
       </div>
     </div>
   )

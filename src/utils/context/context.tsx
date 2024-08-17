@@ -12,8 +12,8 @@ export interface Product {
   price: number
   description: string
   cover: string
-  thumbnail: string
-  ingredients: string[]
+  image: string
+
   amount: number
   newPrice: number
 }
