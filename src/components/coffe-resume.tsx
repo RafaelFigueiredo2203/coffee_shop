@@ -6,6 +6,7 @@ interface CoffeResumeProps {
   image: string
   title: string
   price: string | number
+  amount: number
   onRemoveProduct: () => void
   onIncreaseQuantity: () => void
   onDecreaseQuantity: () => void
@@ -19,6 +20,7 @@ export function CoffeeResume({
   title,
   onDecreaseQuantity,
   onIncreaseQuantity,
+  amount,
 }: CoffeResumeProps) {
   return (
     <div className=" flex h-20 w-[368px] flex-row items-center justify-between ">
@@ -35,7 +37,9 @@ export function CoffeeResume({
             >
               <Minus size={15} color="#8047F8" />{' '}
             </Button>
-            <span className="flex items-center justify-center p-1">1</span>
+            <span className="flex items-center justify-center p-1">
+              {amount}
+            </span>
             <Button
               onClick={onIncreaseQuantity}
               className="flex h-8 items-center justify-center bg-transparent px-1"
