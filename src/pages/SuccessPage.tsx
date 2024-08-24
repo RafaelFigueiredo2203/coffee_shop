@@ -19,12 +19,18 @@ export function SuccessPage() {
     setOrder(newOrder)
   }, [setOrder])
 
+  useEffect(() => {
+    if (!order) {
+      navigation('/')
+    }
+  }, [order, navigation])
+
   if (!order) {
-    return navigation('/')
+    return null // Retorna `null` para evitar retornar `void`
   }
 
   return (
-    <>
+    <div>
       {' '}
       <Header />
       <div className="mt-14 flex flex-row items-center justify-center">
@@ -89,6 +95,6 @@ export function SuccessPage() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }

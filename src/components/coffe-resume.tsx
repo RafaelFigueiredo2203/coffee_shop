@@ -13,7 +13,6 @@ interface CoffeResumeProps {
 }
 
 export function CoffeeResume({
-  id,
   image,
   onRemoveProduct,
   price,
