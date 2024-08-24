@@ -25,7 +25,11 @@ export function FormCheckout({ onSubmit }: FormCheckoutProps) {
 
   const { paymentForm, setPaymentForm, setProductsBuy } = useMyContext()
 
-  const { handleSubmit, register } = useForm<IFormInput>()
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm<IFormInput>()
 
   const handleFormSubmit: SubmitHandler<IFormInput> = (data) => {
     // Salva os dados no localStorage
@@ -59,27 +63,44 @@ export function FormCheckout({ onSubmit }: FormCheckoutProps) {
             </div>
 
             <div className="flex flex-col">
+              {errors.cep && (
+                <span className="text-red-500">{errors.cep.message}</span>
+              )}
               <input
                 type="text"
                 placeholder="CEP"
                 className="mb-4 h-10 w-48 rounded-sm border border-zinc-300 bg-gray-200 px-1 font-roboto outline-none placeholder:text-base"
-                {...register('cep')}
+                {...register('cep', {
+                  required: '*',
+                })}
               />
 
+              {errors.street && (
+                <span className="text-red-500">{errors.street.message}</span>
+              )}
               <input
                 type="text"
                 placeholder="Rua"
                 className="mb-4 h-10 rounded-sm border border-zinc-300 bg-gray-200 px-1 font-roboto outline-none placeholder:text-base"
-                {...register('street')}
+                {...register('street', {
+                  required: '*',
+                })}
               />
             </div>
 
+            {errors.addresNumber && (
+              <span className="text-red-500">
+                {errors.addresNumber.message}
+              </span>
+            )}
             <div className="flex flex-row">
               <input
                 type="text"
                 placeholder="Número"
                 className="mb-4 mr-3 h-10 w-48 rounded-sm border border-zinc-300 bg-gray-200 px-1 font-roboto outline-none placeholder:text-base"
-                {...register('addresNumber')}
+                {...register('addresNumber', {
+                  required: '*',
+                })}
               />
 
               <input
@@ -90,27 +111,44 @@ export function FormCheckout({ onSubmit }: FormCheckoutProps) {
               />
             </div>
 
+            {errors.neighborhood && (
+              <span className="text-red-500">
+                {errors.neighborhood.message}
+              </span>
+            )}
             <div className="flx flex- w-[560px]">
               <input
                 type="text"
                 placeholder="Bairro"
                 className="mb-4 mr-3 h-10 rounded-sm border border-zinc-300 bg-gray-200 px-1 font-roboto outline-none placeholder:text-base"
-                {...register('neighborhood')}
+                {...register('neighborhood', {
+                  required: '*',
+                })}
               />
 
+              {errors.city && (
+                <span className="text-red-500">{errors.city.message}</span>
+              )}
               <input
                 type="text"
                 placeholder="Cidade"
                 className="mb-4 mr-3 h-10 w-72 rounded-sm border border-zinc-300 bg-gray-200 px-1 font-roboto outline-none placeholder:text-base"
-                {...register('city')}
+                {...register('city', {
+                  required: '*',
+                })}
               />
 
               <input
                 type="text"
                 placeholder="UF"
                 className="mb-4 h-10 w-14 rounded-sm border border-zinc-300 bg-gray-200 px-1 font-roboto outline-none placeholder:text-base"
-                {...register('stateUf')}
+                {...register('stateUf', {
+                  required: '*',
+                })}
               />
+              {errors.stateUf && (
+                <span className="text-red-500">{errors.stateUf.message}</span>
+              )}
             </div>
           </div>
 

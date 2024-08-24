@@ -38,7 +38,7 @@ interface CartProviderProps {
 export function CartProvider({ children }: CartProviderProps) {
   const [productsBuy, setProductsBuy] = useState<Product[]>([])
   const [order, setOrder] = useState<IFormInput | null>(null)
-  const [paymentForm, setPaymentForm] = useState('')
+  const [paymentForm, setPaymentForm] = useState('Débito')
 
   return (
     <CartContext.Provider
