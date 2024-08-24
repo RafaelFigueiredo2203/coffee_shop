@@ -1,3 +1,4 @@
+import { IFormInput } from '@/components/form-checkout'
 import {
   Dispatch,
   ReactNode,
@@ -20,11 +21,11 @@ export interface Product {
 
 interface CartContextType {
   productsBuy: Product[]
-  products: Product[]
+  order: IFormInput | null
   paymentForm: string
 
   setProductsBuy: Dispatch<SetStateAction<Product[]>>
-  setProducts: Dispatch<SetStateAction<Product[]>>
+  setOrder: Dispatch<SetStateAction<IFormInput | null>>
   setPaymentForm: Dispatch<SetStateAction<string>>
 }
 
@@ -36,16 +37,16 @@ interface CartProviderProps {
 
 export function CartProvider({ children }: CartProviderProps) {
   const [productsBuy, setProductsBuy] = useState<Product[]>([])
-  const [products, setProducts] = useState<Product[]>([])
-  const [paymentForm, setPaymentForm] = useState('Débito')
+  const [order, setOrder] = useState<IFormInput | null>(null)
+  const [paymentForm, setPaymentForm] = useState('')
 
   return (
     <CartContext.Provider
       value={{
         productsBuy,
         setProductsBuy,
-        products,
-        setProducts,
+        order,
+        setOrder,
         paymentForm,
         setPaymentForm,
       }}

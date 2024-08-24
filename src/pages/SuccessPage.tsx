@@ -1,8 +1,28 @@
 import { Header } from '@/components/header'
+import { useMyContext } from '@/utils/context/useContext'
 import { AlarmClock, DollarSign, MapPinned } from 'lucide-react'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router'
 import deliveryIcon from '../assets/Illustration.png'
 
 export function SuccessPage() {
+  const { order, setOrder } = useMyContext()
+
+  const navigation = useNavigate()
+
+  const paymentForm = localStorage.getItem('paymentForm')
+  const payment = paymentForm ? JSON.parse(paymentForm) : undefined
+
+  useEffect(() => {
+    const orderJSON = localStorage.getItem('order')
+    const newOrder = orderJSON ? JSON.parse(orderJSON) : []
+    setOrder(newOrder)
+  }, [setOrder])
+
+  if (!order) {
+    return navigation('/')
+  }
+
   return (
     <>
       {' '}
@@ -27,10 +47,11 @@ export function SuccessPage() {
                   </span>
                   <div>
                     <p className="text-gray-800">
-                      Entrega em{' '}
-                      <strong>Rua João Daniel Martinelli, 102</strong>{' '}
+                      Entrega em <strong>{order.street}</strong>{' '}
                     </p>
-                    <p className="text-gray-800">Farrapos - Porto Alegre, RS</p>
+                    <p className="text-gray-800">
+                      {order.neighborhood} - {order.city}, {order.stateUf}
+                    </p>
                   </div>
                 </div>
 
@@ -53,7 +74,7 @@ export function SuccessPage() {
                   <div>
                     <p className="text-gray-800">Pagamento na entrega</p>
                     <p className="text-gray-800">
-                      <strong>Cartão de Crédito</strong>
+                      <strong>{payment}</strong>
                     </p>
                   </div>
                 </div>

@@ -15,7 +15,6 @@ export function CoffeeStore() {
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(productsBuy))
-    console.log(numberOfProduct)
   }, [productsBuy])
 
   async function fetchData() {

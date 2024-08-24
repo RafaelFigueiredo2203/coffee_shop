@@ -1,14 +1,12 @@
 import { FormatCurrency } from '@/lib/functions/format-curreny'
 import { useMyContext } from '@/utils/context/useContext'
 import { useEffect } from 'react'
-import { SubmitHandler, useFormContext } from 'react-hook-form'
 import { useNavigate } from 'react-router'
 import { toast } from 'react-toastify'
 import { CoffeeResume } from './coffe-resume'
-import { IFormInput } from './form-checkout'
 
 export function Bag() {
-  const { productsBuy, setProductsBuy, paymentForm } = useMyContext()
+  const { productsBuy, setProductsBuy } = useMyContext()
 
   const notify = () => toast.warn('Removido do Carrinho ✅')
   const navigation = useNavigate()
@@ -19,6 +17,13 @@ export function Bag() {
   )
 
   const totalWithRate = total + 4
+
+  const handleClick = () => {
+    const form = document.getElementById('checkout-form') as HTMLFormElement
+    if (form) {
+      form.requestSubmit() // Submete o formulário
+    }
+  }
 
   function handleIncreaseProduct(id: number) {
     setProductsBuy((prevProducts) =>
@@ -84,17 +89,6 @@ export function Bag() {
     }
   }, [productsBuy])
 
-  const methods = useFormContext<IFormInput>()
-
-  console.log('methods:', methods)
-
-  const { handleSubmit } = methods
-
-  const onSubmit: SubmitHandler<IFormInput> = (data: IFormInput) => {
-    console.log('Dados do formulário:', data)
-    // Lógica para processar e enviar os dados do pedido
-  }
-
   return (
     <div className="mx-14 mb-8 mt-10 flex w-[448px] flex-col">
       <h3 className="mb-6 font-dongle text-3xl font-bold text-zinc-800">
@@ -144,7 +138,7 @@ export function Bag() {
         </div>
 
         <button
-          onClick={handleSubmit(onSubmit)}
+          onClick={handleClick}
           type="button"
           className="mb-10 mt-6 flex h-11 w-[368px] items-center justify-center rounded-xl bg-[#DBAC2C] font-roboto text-sm font-bold text-white hover:bg-yellow-500"
         >
