@@ -26,16 +26,16 @@ export function SuccessPage() {
   }, [order, navigation])
 
   if (!order) {
-    return null // Retorna `null` para evitar retornar `void`
+    return null
   }
 
   return (
     <div>
       {' '}
       <Header />
-      <div className="mt-14 flex flex-row items-center justify-center">
+      <div className="mt-14 flex w-full items-center  justify-center p-4 lg:flex-row">
         <div>
-          <div>
+          <div className="md:items-left  md:justify-left flex  flex-col items-center justify-center p-1">
             <h1 className="font-dongle text-5xl font-bold text-yellow-600 ">
               Uhu! Pedido confirmado
             </h1>
@@ -44,9 +44,9 @@ export function SuccessPage() {
             </h3>
           </div>
 
-          <div className=" mt-10 flex flex-row items-center justify-center">
-            <div className=" rounded-sm rounded-bl-[50px] rounded-tr-[50px] border  bg-gradient-to-tr from-yellow-500 to-purple-500 p-0.5 ">
-              <div className="flex h-[270px] w-[520px] flex-col  items-center justify-center rounded-sm  rounded-bl-[50px] rounded-tr-[50px]  bg-white p-10 font-roboto text-[15px]">
+          <div className=" mb-10 mt-10 flex flex-col items-center justify-center p-2  lg:flex-row">
+            <div className=" mb-5 rounded-sm rounded-bl-[50px] rounded-tr-[50px]  border bg-gradient-to-tr from-yellow-500 to-purple-500 p-0.5 ">
+              <div className="flex h-[270px] w-full flex-col  items-center justify-center rounded-sm  rounded-bl-[50px] rounded-tr-[50px]  bg-white p-10 font-roboto text-[15px]">
                 <div className="items-left mb-5 flex w-full  flex-row  items-center">
                   <span className="mr-2 flex h-8 w-8 items-center justify-center rounded-full bg-purple-600">
                     <MapPinned size={16} color="white" />
@@ -89,7 +89,7 @@ export function SuccessPage() {
 
             <img
               src={deliveryIcon}
-              className="ml-10 h-[290px]"
+              className="ml-10 sm:h-[290px]"
               alt="Delivery icon"
             />
           </div>

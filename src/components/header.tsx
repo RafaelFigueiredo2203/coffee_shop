@@ -8,7 +8,7 @@ export function Header() {
   const { productsBuy } = useMyContext()
 
   return (
-    <div className="flex h-20 w-full items-center justify-between px-14 ">
+    <div className="flex h-20 w-full items-center justify-between px-4 sm:px-14 ">
       <Link to="/">
         <img src={logo} alt="" />
       </Link>

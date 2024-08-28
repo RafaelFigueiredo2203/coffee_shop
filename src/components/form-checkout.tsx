@@ -44,7 +44,7 @@ export function FormCheckout({ onSubmit }: FormCheckoutProps) {
   }
 
   return (
-    <div className="mx-14 mb-8 mt-10 flex w-[640px] flex-col   ">
+    <div className="mx-14 mb-8 mt-10 flex flex-col xl:w-[640px]   ">
       <h3 className="mb-6 font-dongle text-3xl font-bold text-zinc-800">
         Complete seu pedido
       </h3>
@@ -93,7 +93,7 @@ export function FormCheckout({ onSubmit }: FormCheckoutProps) {
                 {errors.addresNumber.message}
               </span>
             )}
-            <div className="flex flex-row">
+            <div className="phone:flex-row flex flex-col">
               <input
                 type="text"
                 placeholder="Número"
@@ -116,7 +116,7 @@ export function FormCheckout({ onSubmit }: FormCheckoutProps) {
                 {errors.neighborhood.message}
               </span>
             )}
-            <div className="flx flex- w-[560px]">
+            <div className="flx md:w-[560px]">
               <input
                 type="text"
                 placeholder="Bairro"
@@ -132,7 +132,7 @@ export function FormCheckout({ onSubmit }: FormCheckoutProps) {
               <input
                 type="text"
                 placeholder="Cidade"
-                className="mb-4 mr-3 h-10 w-72 rounded-sm border border-zinc-300 bg-gray-200 px-1 font-roboto outline-none placeholder:text-base"
+                className="mb-4 mr-3 h-10 rounded-sm border border-zinc-300 bg-gray-200 px-1 font-roboto outline-none placeholder:text-base sm:w-72"
                 {...register('city', {
                   required: '*',
                 })}
@@ -163,12 +163,12 @@ export function FormCheckout({ onSubmit }: FormCheckoutProps) {
               </p>
             </div>
 
-            <div className="mb-8 mt-8 flex w-full flex-row items-center justify-center">
+            <div className="mb-8 mt-8 flex w-full flex-col items-center justify-center md:flex-row">
               {paymentForm === 'Crédito' ? (
                 <button
                   onClick={() => setPaymentForm('Crédito')}
                   type="button"
-                  className="mr-2 flex h-12  w-44 flex-row items-center justify-center rounded-md border border-purple-700   bg-zinc-300 text-center text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
+                  className="mr-2 mt-2 flex h-12  w-44 flex-row items-center justify-center rounded-md border border-purple-700   bg-zinc-300 text-center text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
                 >
                   <CreditCardIcon className="mr-1 flex h-5 w-5 text-purple-600" />
                   Cartão de crédito
@@ -177,7 +177,7 @@ export function FormCheckout({ onSubmit }: FormCheckoutProps) {
                 <button
                   onClick={() => setPaymentForm('Crédito')}
                   type="button"
-                  className="mr-2 flex h-12  w-44 flex-row items-center justify-center rounded-md bg-zinc-200  text-center text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
+                  className="mr-2 mt-2 flex h-12  w-44 flex-row items-center justify-center rounded-md bg-zinc-200  text-center text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
                 >
                   <CreditCardIcon className="mr-1 flex h-5 w-5 text-purple-600" />
                   Cartão de crédito
@@ -188,7 +188,7 @@ export function FormCheckout({ onSubmit }: FormCheckoutProps) {
                 <button
                   onClick={() => setPaymentForm('Débito')}
                   type="button"
-                  className="mr-2 flex h-12  w-44 flex-row items-center justify-center rounded-md border border-purple-700   bg-zinc-300 text-center text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
+                  className="mr-2 mt-2 flex h-12  w-44 flex-row items-center justify-center rounded-md border border-purple-700   bg-zinc-300 text-center text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
                 >
                   <CreditCardIcon className="mr-1 h-5 w-5 text-purple-600" />
                   Cartão de débito
@@ -197,7 +197,7 @@ export function FormCheckout({ onSubmit }: FormCheckoutProps) {
                 <button
                   onClick={() => setPaymentForm('Débito')}
                   type="button"
-                  className="mr-2 flex h-12 w-44  flex-row items-center justify-center rounded-md bg-zinc-200 text-center  text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
+                  className="mr-2 mt-2 flex h-12 w-44  flex-row items-center justify-center rounded-md bg-zinc-200 text-center  text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
                 >
                   <CreditCardIcon className="mr-1 h-5 w-5 text-purple-600" />
                   Cartão de débito
@@ -208,7 +208,7 @@ export function FormCheckout({ onSubmit }: FormCheckoutProps) {
                 <button
                   onClick={() => setPaymentForm('Dinheiro')}
                   type="button"
-                  className="mr-2 flex h-12  w-44 flex-row items-center justify-center rounded-md border border-purple-700   bg-zinc-300 text-center text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
+                  className="mr-2 mt-2 flex h-12  w-44 flex-row items-center justify-center rounded-md border border-purple-700   bg-zinc-300 text-center text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
                 >
                   <CircleDollarSign className="mr-1 h-5 w-5 text-purple-600" />
                   Dinheiro
@@ -217,7 +217,7 @@ export function FormCheckout({ onSubmit }: FormCheckoutProps) {
                 <button
                   onClick={() => setPaymentForm('Dinheiro')}
                   type="button"
-                  className="mr-2 flex h-12  w-44 flex-row items-center justify-center rounded-md bg-zinc-200  text-center text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
+                  className="mr-2 mt-2 flex h-12  w-44 flex-row items-center justify-center rounded-md bg-zinc-200  text-center text-zinc-700 hover:border hover:border-purple-700 hover:bg-zinc-300"
                 >
                   <CircleDollarSign className="mr-1 h-5 w-5 text-purple-600" />
                   Dinheiro

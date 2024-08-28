@@ -22,14 +22,14 @@ export function CoffeeResume({
   amount,
 }: CoffeResumeProps) {
   return (
-    <div className=" flex h-20 w-[368px] flex-row items-center justify-between ">
-      <img className="mr-3 h-16 w-16" src={image} alt="" />
+    <div className=" flex h-20 w-full flex-row items-center justify-between sm:w-[368px] ">
+      <img className="phone:block mr-3 hidden h-16 w-16 " src={image} alt="" />
       <div className="items-left flex flex-col">
         <span className="flex flex-row items-center text-center font-roboto text-base text-gray-900">
           {title}
         </span>
         <div className="flex flex-row">
-          <div className=" mr-2 flex h-8 w-16 flex-row items-center rounded-sm bg-gray-300">
+          <div className=" mr-2 flex h-8 flex-row items-center rounded-sm bg-gray-300 sm:w-16">
             <Button
               onClick={onDecreaseQuantity}
               className="flex h-8 items-center justify-center bg-transparent px-1"

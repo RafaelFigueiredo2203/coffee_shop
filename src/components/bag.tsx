@@ -90,12 +90,12 @@ export function Bag() {
   }, [productsBuy])
 
   return (
-    <div className="mx-14 mb-8 mt-10 flex w-[448px] flex-col">
+    <div className="mx-14 mb-8 mt-10 flex flex-col sm:w-[448px]">
       <h3 className="mb-6 font-dongle text-3xl font-bold text-zinc-800">
         Café selecionados
       </h3>
 
-      <div className="flex flex-col items-center rounded-sm rounded-bl-[50px] rounded-tr-[50px] bg-zinc-50  pt-10">
+      <div className="flex w-full flex-col items-center rounded-sm rounded-bl-[50px] rounded-tr-[50px] bg-zinc-50 p-2  pt-10">
         {productsBuy.map((coffee) => (
           <>
             <CoffeeResume
@@ -112,11 +112,11 @@ export function Bag() {
               }
               onRemoveProduct={() => handleProductRemove(Number(coffee.id))}
             />
-            <span className="mb-5 mt-5 h-[1px]  w-[368px] bg-zinc-400" />
+            <span className="mb-5 mt-5 h-[1px]  w-full bg-zinc-400" />
           </>
         ))}
 
-        <div className="flex w-[368px] flex-col items-center ">
+        <div className="flex w-full flex-col items-center sm:w-[368px] ">
           <span className="flex w-full flex-row items-center justify-between">
             <p className="font-roboto text-sm text-zinc-800">Total de itens</p>
             <p className="font-roboto text-base text-zinc-800">
@@ -140,7 +140,7 @@ export function Bag() {
         <button
           onClick={handleClick}
           type="button"
-          className="mb-10 mt-6 flex h-11 w-[368px] items-center justify-center rounded-xl bg-[#DBAC2C] font-roboto text-sm font-bold text-white hover:bg-yellow-500"
+          className="mb-10 mt-6 flex h-11 w-[368px] w-full items-center justify-center rounded-xl bg-[#DBAC2C] font-roboto text-sm font-bold text-white hover:bg-yellow-500"
         >
           Confirmar Pedido
         </button>

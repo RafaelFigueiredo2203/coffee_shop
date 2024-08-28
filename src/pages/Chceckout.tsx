@@ -11,7 +11,7 @@ export function Checkout() {
   return (
     <>
       <Header />
-      <div className="flex flex-1 flex-row">
+      <div className="flex flex-1 flex-col xl:flex-row">
         <FormCheckout onSubmit={handleFormSubmit} />
         <Bag />
       </div>
