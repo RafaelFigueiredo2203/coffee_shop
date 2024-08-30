@@ -51,26 +51,23 @@ export function Header() {
               })
             } catch (err) {
               setError('Erro ao buscar localização pela geolocalização')
+              console.log(error)
               getLocationFromIP()
             }
           },
           (error) => {
             console.error('Erro ao obter localização:', error)
+            console.log(error)
             setError('Permissão de geolocalização negada.')
             getLocationFromIP()
           },
         )
       } else if (permissionStatus.state === 'prompt') {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            const { latitude, longitude } = position.coords
-          },
-          (error) => {
-            console.error('Erro ao obter localização:', error)
-            setError('Permissão de geolocalização negada.')
-            getLocationFromIP()
-          },
-        )
+        navigator.geolocation.getCurrentPosition((error) => {
+          console.error('Erro ao obter localização:', error)
+          setError('Permissão de geolocalização negada.')
+          getLocationFromIP()
+        })
       } else {
         setError('Permissão de geolocalização negada.')
         getLocationFromIP()
