@@ -43,7 +43,7 @@ Para rodar o projeto localmente, siga as instruções abaixo:
 
 1.  Clone o repositório:
 
-bash
+
 
 Copiar código
 
@@ -51,7 +51,7 @@ Copiar código
 
 2.  Navegue até o diretório do projeto:
 
-bash
+
 
 Copiar código
 
@@ -59,7 +59,7 @@ Copiar código
 
 3.  Instale as dependências:
 
-bash
+
 
 Copiar código
 
@@ -67,7 +67,6 @@ Copiar código
 
 4.  Inicie o servidor de desenvolvimento:
 
-bash
 
 Copiar código
 
