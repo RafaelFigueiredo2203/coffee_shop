@@ -69,7 +69,7 @@ export function Header() {
           getLocationFromIP()
         })
       } else {
-        setError('Permissão de geolocalização negada.')
+        setError('Permissão de geolocalização negada')
         getLocationFromIP()
       }
     }
