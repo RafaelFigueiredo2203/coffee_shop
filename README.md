@@ -3,6 +3,20 @@
 
 Este é um projeto de uma aplicação para uma loja de café, desenvolvida com o intuito de aprimorar habilidades em tecnologias web modernas.
 
+<br>
+
+<h1 align="center">
+    
+![image](https://github.com/user-attachments/assets/6a422f6f-53c3-4260-94c3-484c642219f4)
+![image](https://github.com/user-attachments/assets/a78e50a4-156b-4266-b69d-15811929470c)
+![image](https://github.com/user-attachments/assets/19fad0c2-b9c3-4a51-8eb3-c3d795c4a430)
+
+
+
+</h1>
+
+<br>
+
 ## 🚀 Aplicação Online
 
 Você pode acessar a aplicação rodando ao vivo através deste link: [Coffee Shop](https://coffee-shop-pihu.vercel.app/)
